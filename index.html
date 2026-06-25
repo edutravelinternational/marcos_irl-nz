@@ -559,6 +559,93 @@ footer strong{color:rgba(255,255,255,0.75);}
 .exec-table .exec-highlight td:nth-child(2) { font-size:1rem; font-family:'Poppins',sans-serif; }
 .exec-table .exec-highlight td:nth-child(3) { font-size:1rem; font-family:'Poppins',sans-serif; }
 
+
+/* ── INSTITUCIONES ── */
+#instituciones { background: var(--soft); padding: 80px 2rem; }
+
+.inst-country-tabs { display:flex; gap:12px; margin:32px 0 28px; }
+.inst-ctab {
+  flex:1; padding:14px; border-radius:var(--radius); border:2px solid var(--border);
+  background:white; cursor:pointer; font-family:'Poppins',sans-serif; font-size:15px; font-weight:700;
+  transition:all 0.25s; color:var(--text2); display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.inst-ctab.ie-t.active { background:var(--ireland); border-color:var(--ireland); color:white; box-shadow:0 4px 20px rgba(22,155,98,0.35); }
+.inst-ctab.nz-t.active { background:var(--nz); border-color:var(--nz); color:white; box-shadow:0 4px 20px rgba(0,70,127,0.35); }
+.inst-ctab:hover:not(.active) { border-color:var(--blue); color:var(--blue-dark); transform:translateY(-2px); }
+.inst-country-panel { display:none; }
+.inst-country-panel.active { display:block; animation:fadeIn 0.35s ease; }
+
+.inst-grid { display:flex; flex-direction:column; gap:20px; }
+
+.inst-card {
+  background:white; border-radius:var(--radius-lg); border:1px solid var(--border);
+  overflow:hidden; box-shadow:var(--shadow); transition:all 0.3s;
+}
+.inst-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.inst-card-top { height:4px; }
+.inst-card-top.ie-1 { background:linear-gradient(90deg,var(--ireland),var(--teal)); }
+.inst-card-top.ie-2 { background:linear-gradient(90deg,#c8a800,#f0d000); }
+.inst-card-top.ie-3 { background:linear-gradient(90deg,#8B4513,#c0703a); }
+.inst-card-top.nz-1 { background:linear-gradient(90deg,var(--nz),var(--blue)); }
+.inst-card-top.nz-2 { background:linear-gradient(90deg,#006d5b,var(--teal)); }
+
+.inst-card-body { padding:28px 32px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:start; }
+@media(max-width:700px) { .inst-card-body { grid-template-columns:1fr; } }
+
+.inst-badge {
+  display:inline-block; padding:4px 14px; border-radius:50px; margin-bottom:12px;
+  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;
+}
+.badge-ie-main { background:rgba(22,155,98,0.1); color:#0a5c35; border:1px solid rgba(22,155,98,0.25); }
+.badge-ie-alt  { background:rgba(67,181,232,0.1); color:var(--blue-dark); border:1px solid rgba(67,181,232,0.25); }
+.badge-nz-main { background:rgba(0,70,127,0.1); color:var(--nz-dark); border:1px solid rgba(0,70,127,0.25); }
+
+.inst-name { font-size:1.2rem; font-weight:900; color:var(--text); margin-bottom:4px; font-family:'Poppins',sans-serif; }
+.inst-location { font-size:12px; color:var(--text3); font-weight:600; text-transform:uppercase; letter-spacing:0.7px; margin-bottom:14px; }
+.inst-desc { font-size:14px; color:var(--text2); line-height:1.7; margin-bottom:18px; max-width:620px; }
+
+.inst-differentiator {
+  background:var(--soft); border-left:3px solid var(--ireland);
+  border-radius:0 10px 10px 0; padding:14px 16px; margin-bottom:18px;
+}
+.inst-differentiator.nz-d { border-left-color:var(--nz); }
+.inst-differentiator .d-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:var(--text3); margin-bottom:5px; }
+.inst-differentiator p { font-size:13px; color:var(--text); font-weight:600; line-height:1.55; }
+
+.inst-why { list-style:none; display:flex; flex-direction:column; gap:7px; margin-bottom:20px; }
+.inst-why li { font-size:13px; color:var(--text2); display:flex; align-items:flex-start; gap:8px; line-height:1.5; }
+.inst-why li::before { content:'✓'; color:var(--success); font-weight:700; flex-shrink:0; margin-top:1px; }
+
+.inst-links { display:flex; gap:10px; flex-wrap:wrap; }
+.inst-link-primary {
+  display:inline-flex; align-items:center; gap:6px; padding:10px 20px;
+  border-radius:50px; font-size:13px; font-weight:700; text-decoration:none; transition:all 0.2s;
+  background:var(--ireland); color:white;
+}
+.inst-link-primary.nz { background:var(--nz); }
+.inst-link-primary:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(0,0,0,0.2); }
+.inst-link-secondary {
+  display:inline-flex; align-items:center; gap:6px; padding:9px 18px;
+  border-radius:50px; font-size:13px; font-weight:600; text-decoration:none; transition:all 0.2s;
+  background:var(--soft); color:var(--text2); border:1px solid var(--border);
+}
+.inst-link-secondary:hover { border-color:var(--blue); color:var(--blue-dark); transform:translateY(-2px); }
+
+/* Summary table */
+.inst-summary {
+  background:white; border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:28px; margin-top:28px; box-shadow:var(--shadow);
+}
+.inst-summary h3 { font-size:1rem; font-weight:800; margin-bottom:16px; }
+.inst-sum-table { width:100%; border-collapse:collapse; }
+.inst-sum-table th { padding:10px 14px; text-align:left; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.7px; color:var(--text3); background:var(--soft); }
+.inst-sum-table td { padding:12px 14px; border-bottom:1px solid var(--border); font-size:13px; color:var(--text2); }
+.inst-sum-table td:first-child { font-weight:700; color:var(--text); }
+.inst-sum-table td:nth-child(2) { font-weight:600; }
+.inst-sum-table tr:last-child td { border-bottom:none; }
+.inst-sum-table .ie-row td:nth-child(2) { color:var(--ireland); }
+.inst-sum-table .nz-row td:nth-child(2) { color:var(--nz); }
+
 </style>
 </head>
 <body>
@@ -772,6 +859,187 @@ footer strong{color:rgba(255,255,255,0.75);}
     <div class="rec-box reveal d2">
       <h4>🎯 Nuestra lectura para tu perfil como Desarrollador de Software</h4>
       <p><strong>Si priorizas la proyección tech y el ecosistema digital europeo</strong> → Irlanda es la opción más estratégica. Estar en Dublín con inglés funcional puede abrir oportunidades reales con las empresas más importantes del mundo.<br><br><strong>Si priorizas calidad de vida y un ambiente más tranquilo</strong> → Nueva Zelanda ofrece una experiencia de vida excepcional con un mercado tech en expansión que valora genuinamente los perfiles internacionales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTITUCIONES -->
+<section id="instituciones">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Instituciones seleccionadas</div>
+      <h2 class="section-title">Escuelas recomendadas para tu perfil</h2>
+      <p class="section-sub">Cinco instituciones analizadas en detalle — tres en Irlanda, dos en Nueva Zelanda. Cada una fue seleccionada considerando tu perfil tech, tu objetivo de inmersión y la solidez para tu proceso migratorio.</p>
+    </div>
+
+    <div class="inst-country-tabs reveal d1">
+      <button class="inst-ctab ie-t active" onclick="showInstCountry('ie',this)">🇮🇪 Irlanda · 3 instituciones</button>
+      <button class="inst-ctab nz-t" onclick="showInstCountry('nz',this)">🇳🇿 Nueva Zelanda · 2 instituciones</button>
+    </div>
+
+    <!-- ══ IRLANDA ══ -->
+    <div class="inst-country-panel active" id="inst-ie">
+      <div class="inst-grid">
+
+        <!-- ILSC -->
+        <div class="inst-card reveal d1">
+          <div class="inst-card-top ie-1"></div>
+          <div class="inst-card-body">
+            <div>
+              <span class="inst-badge badge-ie-main">Irlanda · Recomendada Edutravel</span>
+              <div class="inst-name">ILSC Dublin</div>
+              <div class="inst-location">📍 Dublín, Irlanda</div>
+              <p class="inst-desc">Institución reconocida internacionalmente por la flexibilidad de su estructura académica y la calidad de sus programas de inglés general, preparación IELTS y rutas académicas personalizadas.</p>
+              <div class="inst-differentiator">
+                <div class="d-label">Diferenciador principal</div>
+                <p>Flexibilidad académica única: posibilidad de combinar inglés general, preparación IELTS y programas pathway en una misma institución, adaptando la experiencia a tu ritmo de progresión.</p>
+              </div>
+              <ul class="inst-why">
+                <li>Amplia oferta académica con posibilidad de combinar cursos de inglés general, IELTS y programas pathway</li>
+                <li>Fuerte enfoque en aprendizaje práctico y comunicación real</li>
+                <li>Excelente diversidad internacional en las aulas</li>
+                <li>Flexibilidad de horarios y progresión académica estructurada</li>
+              </ul>
+              <div class="inst-links">
+                <a class="inst-link-primary" href="https://www.ilsc.com/language-schools/ireland/dublin" target="_blank">🌐 Sitio oficial</a>
+                <a class="inst-link-secondary" href="https://www.ilsc.com/language-schools/ireland/dublin#campus-life" target="_blank">🏛️ Vida en el campus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ATLAS -->
+        <div class="inst-card reveal d2">
+          <div class="inst-card-top ie-2"></div>
+          <div class="inst-card-body">
+            <div>
+              <span class="inst-badge badge-ie-alt">Irlanda · Diversidad internacional</span>
+              <div class="inst-name">Atlas Language School Dublin</div>
+              <div class="inst-location">📍 Portobello House, frente al Grand Canal · Dublín</div>
+              <p class="inst-desc">Escuela galardonada internacionalmente y acreditada por EAQUALS, reconocida por mantener una de las mejores mezclas de nacionalidades de Irlanda y un programa social y cultural muy activo a lo largo del año.</p>
+              <div class="inst-differentiator">
+                <div class="d-label">Diferenciador principal</div>
+                <p>Una de las mejores experiencias estudiantiles en Irlanda gracias a su excelente mezcla de nacionalidades y su fuerte programa de integración social y cultural — no solo aprendes inglés, también construyes una red internacional real.</p>
+              </div>
+              <ul class="inst-why">
+                <li>Ubicación privilegiada en Portobello House, frente al Grand Canal</li>
+                <li>Reconocida por mantener una excelente mezcla de nacionalidades</li>
+                <li>Amplio programa social y cultural durante todo el año</li>
+                <li>Acreditada por EAQUALS y galardonada internacionalmente</li>
+              </ul>
+              <div class="inst-links">
+                <a class="inst-link-primary" href="https://atlaslanguageschool.com/atlas-dublin/" target="_blank">🌐 Sitio oficial</a>
+                <a class="inst-link-secondary" href="https://atlaslanguageschool.com/atlas-dublin/" target="_blank">📸 Explora el campus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CES -->
+        <div class="inst-card reveal d3">
+          <div class="inst-card-top ie-3"></div>
+          <div class="inst-card-body">
+            <div>
+              <span class="inst-badge badge-ie-alt">Irlanda · Centro examinador IELTS</span>
+              <div class="inst-name">CES Dublin</div>
+              <div class="inst-location">📍 Centro de Dublín · Frente a Trinity College</div>
+              <p class="inst-desc">Más de 45 años de trayectoria. Centro oficial examinador de IELTS, Cambridge y OET, ubicado en pleno corazón de Dublín, frente al Trinity College. Referencia académica en Irlanda.</p>
+              <div class="inst-differentiator">
+                <div class="d-label">Diferenciador principal</div>
+                <p>Centro oficial examinador de IELTS y Cambridge: puedes preparar y presentar tus exámenes internacionales directamente en la institución — una ventaja concreta que ahorra tiempo y garantiza preparación específica para el formato oficial.</p>
+              </div>
+              <ul class="inst-why">
+                <li>Más de 45 años de trayectoria enseñando inglés a nivel internacional</li>
+                <li>Campus ubicado frente a Trinity College en el centro de Dublín</li>
+                <li>Centro oficial examinador IELTS, Cambridge y OET</li>
+                <li>Excelente reputación académica y reconocimiento internacional</li>
+              </ul>
+              <div class="inst-links">
+                <a class="inst-link-primary" href="https://www.ces-schools.com/dublin/" target="_blank">🌐 Sitio oficial</a>
+                <a class="inst-link-secondary" href="https://www.ces-schools.com/dublin/" target="_blank">🏛️ Conoce CES Dublin</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /inst-ie -->
+
+    <!-- ══ NUEVA ZELANDA ══ -->
+    <div class="inst-country-panel" id="inst-nz">
+      <div class="inst-grid">
+
+        <!-- NZLC -->
+        <div class="inst-card reveal d1">
+          <div class="inst-card-top nz-1"></div>
+          <div class="inst-card-body">
+            <div>
+              <span class="inst-badge badge-nz-main">Nueva Zelanda · Categoría 1 NZQA</span>
+              <div class="inst-name">NZLC Auckland</div>
+              <div class="inst-location">📍 Auckland, Nueva Zelanda</div>
+              <p class="inst-desc">New Zealand Language Centres — una de las escuelas más premiadas del hemisferio sur. Categoría 1 de NZQA (máxima calificación gubernamental), ganadora del ST Star Award y reconocida como ST Super Star School en múltiples ocasiones.</p>
+              <div class="inst-differentiator nz-d">
+                <div class="d-label">Diferenciador principal</div>
+                <p>Categoría 1 NZQA y múltiples premios internacionales: el perfil académico más sólido de las opciones neozelandesas, con una calificación gubernamental máxima que fortalece significativamente cualquier proceso migratorio.</p>
+              </div>
+              <ul class="inst-why">
+                <li>Categoría 1 NZQA — máxima calificación otorgada por el gobierno neozelandés</li>
+                <li>Ganadora ST Star Award y ST Super Star School en múltiples ediciones</li>
+                <li>Excelente tasa de satisfacción estudiantil comprobada</li>
+                <li>Programas orientados a progresión universitaria y exámenes oficiales</li>
+              </ul>
+              <div class="inst-links">
+                <a class="inst-link-primary nz" href="https://nzlc.ac.nz/" target="_blank">🌐 Sitio oficial</a>
+                <a class="inst-link-secondary" href="https://nzlc.ac.nz/auckland-campus/" target="_blank">🏛️ Campus Auckland</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORLDWIDE -->
+        <div class="inst-card reveal d2">
+          <div class="inst-card-top nz-2"></div>
+          <div class="inst-card-body">
+            <div>
+              <span class="inst-badge badge-nz-main">Nueva Zelanda · Grupos reducidos</span>
+              <div class="inst-name">Worldwide School of English</div>
+              <div class="inst-location">📍 Auckland, Nueva Zelanda</div>
+              <p class="inst-desc">Categoría 1 NZQA. Más de 25 nacionalidades representadas anualmente. Clases pequeñas (promedio 14–16 estudiantes) con sistema de seguimiento académico individualizado y reuniones periódicas con docentes.</p>
+              <div class="inst-differentiator nz-d">
+                <div class="d-label">Diferenciador principal</div>
+                <p>Grupos reducidos con seguimiento personalizado: clases de 14–16 estudiantes con planes de estudio individuales y reuniones periódicas con profesores — una experiencia académica donde nadie se pierde en el grupo.</p>
+              </div>
+              <ul class="inst-why">
+                <li>Categoría 1 NZQA — máxima calificación gubernamental neozelandesa</li>
+                <li>Más de 25 nacionalidades representadas cada año</li>
+                <li>Clases pequeñas: promedio 14–16 estudiantes por grupo</li>
+                <li>Seguimiento académico individual y reuniones periódicas con docentes</li>
+                <li>Curso gratuito de Barista o Bartender incluido en la promoción vigente</li>
+              </ul>
+              <div class="inst-links">
+                <a class="inst-link-primary nz" href="https://worldwideschool.ac.nz/" target="_blank">🌐 Sitio oficial</a>
+                <a class="inst-link-secondary" href="https://worldwideschool.ac.nz/about-us/" target="_blank">ℹ️ Sobre la escuela</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /inst-nz -->
+
+    <!-- RESUMEN COMPARATIVO -->
+    <div class="inst-summary reveal d2">
+      <h3>Diferenciadores clave · resumen rápido</h3>
+      <table class="inst-sum-table">
+        <thead><tr><th>Institución</th><th>País</th><th>Diferenciador clave</th></tr></thead>
+        <tbody>
+          <tr class="ie-row"><td>ILSC Dublin</td><td>🇮🇪 Irlanda</td><td>Flexibilidad académica y rutas personalizadas</td></tr>
+          <tr class="ie-row"><td>Atlas Dublin</td><td>🇮🇪 Irlanda</td><td>Diversidad internacional y experiencia estudiantil</td></tr>
+          <tr class="ie-row"><td>CES Dublin</td><td>🇮🇪 Irlanda</td><td>Centro oficial examinador IELTS y Cambridge</td></tr>
+          <tr class="nz-row"><td>NZLC Auckland</td><td>🇳🇿 Nueva Zelanda</td><td>Categoría 1 NZQA y múltiples premios internacionales</td></tr>
+          <tr class="nz-row"><td>Worldwide Auckland</td><td>🇳🇿 Nueva Zelanda</td><td>Clases pequeñas y acompañamiento personalizado</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -1565,6 +1833,14 @@ footer strong{color:rgba(255,255,255,0.75);}
 
 <script>
 
+
+
+function showInstCountry(country, btn) {
+  document.querySelectorAll('.inst-country-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.inst-ctab').forEach(function(t) { t.classList.remove('active'); });
+  document.getElementById('inst-' + country).classList.add('active');
+  btn.classList.add('active');
+}
 
 function showVisaDest(dest, btn) {
   document.querySelectorAll('.visa-dest-panel').forEach(function(p) { p.classList.remove('active'); });
